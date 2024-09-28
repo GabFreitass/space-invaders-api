@@ -1,5 +1,5 @@
 const admin = require("firebase-admin");
-const serviceAccount = require("../config/space-invaders-api-firebase-adminsdk-o3ga1-1daf9807ce.json");
+const serviceAccount = require("../config/space-invaders-firebasekey.json");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
