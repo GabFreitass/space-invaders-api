@@ -3,18 +3,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
-// Middleware para verificar campos obrigatórios
-const validateRequiredFields = (fields) => {
-    return (req, res, next) => {
-        for (const field of fields) {
-            if (!req.body[field]) {
-                return res.status(400).send("Missing required fields.");
-            }
-        }
-        next();
-    };
-};
+const { validateRequiredFields } = require("../middlewares/validation");
 
 router.post(
     "/registerUser",
