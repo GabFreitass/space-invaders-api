@@ -26,7 +26,7 @@ router.post("/add", authenticateToken, async (req, res) => {
     }
 });
 
-router.get("/topScores", authenticateToken, async (req, res) => {
+router.get("/topScores", async (req, res) => {
     try {
         const snapshot = await admin
             .firestore()
