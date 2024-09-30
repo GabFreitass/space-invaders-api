@@ -1,6 +1,6 @@
 // Middleware para verificar o token JWT
 const authenticateToken = (req, res, next) => {
-    const token = req.headers["authorization"]?.match(/Bearer (.+)/)[1]; // Obtém o token do cabeçalho com regex
+    const token = req.headers["authorization"].match(/Bearer (.+)/)[1]; // Obtém o token do cabeçalho com regex
 
     if (!token) {
         return res.status(401).send("Access denied. No token provided.");
