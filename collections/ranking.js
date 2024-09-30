@@ -5,7 +5,7 @@ const { authenticateToken } = require("../middlewares/auth");
 
 router.post("/add", async (req, res) => {
     const { clientId, playerName, obtainedAt, score } = req.body;
-    if (!clientId || !playerName || !obtainedAt || !score) {
+    if (!clientId || !playerName || !obtainedAt) {
         return res.status(400).send("Missing required fields.");
     }
     try {
